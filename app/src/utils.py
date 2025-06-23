@@ -121,32 +121,32 @@ def build_markup_for_logo(png_file):
             [data-testid="stSidebarNav"] {
                 background-image: url("data:image/png;base64,%s");
                 background-repeat: no-repeat;
-                padding-top: 50px;
+                padding-top: 100px;
                 padding-bottom: 10px;
                 background-position: %s;
                 background-size: %s %s;
             }
             [data-testid="stSidebarNav"]::before {
                 content: "%s";
-                margin-left: 20px;
+                display: block;
                 margin-top: 20px;
                 margin-bottom: 20px;
                 font-size: %s;
                 font-weight: %s;
-                position: relative;
                 text-align: center;
-                top: 85px;
+                position: static;
             }
         </style>
         """ % (
         binary_string,
         params["MA_logo_background_position"],
         params["MA_logo_width"],
-        "",
+        "",  # height is not set
         params["sidebar_header"],
         params["sidebar_header_fontsize"],
         params["sidebar_header_fontweight"],
     )
+
 
 
 def add_logo(png_file):
